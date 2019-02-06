@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3B40BE00220B845E00A7E002 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B40BDFF220B845E00A7E002 /* Foundation.framework */; };
 		3B40BE0B220B845E00A7E002 /* DoubleWakeup.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3B40BE0A220B845E00A7E002 /* DoubleWakeup.mm */; };
+		3B40BE16220B85DD00A7E002 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B40BE15220B85DD00A7E002 /* UIKit.framework */; };
+		3B40BE18220B85F100A7E002 /* libsubstrate.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B40BE17220B85F100A7E002 /* libsubstrate.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,9 +20,11 @@
 		3B40BE05220B845E00A7E002 /* control */ = {isa = PBXFileReference; lastKnownFileType = text; name = control; path = Package/DEBIAN/control; sourceTree = "<group>"; };
 		3B40BE07220B845E00A7E002 /* PackageVersion.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PackageVersion.plist; sourceTree = "<group>"; };
 		3B40BE08220B845E00A7E002 /* DoubleWakeup-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DoubleWakeup-Prefix.pch"; sourceTree = "<group>"; };
-		3B40BE09220B845E00A7E002 /* DoubleWakeup.xm */ = {isa = PBXFileReference; lastKnownFileType = text; path = DoubleWakeup.xm; sourceTree = "<group>"; };
+		3B40BE09220B845E00A7E002 /* DoubleWakeup.xm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DoubleWakeup.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		3B40BE0A220B845E00A7E002 /* DoubleWakeup.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DoubleWakeup.mm; sourceTree = "<group>"; };
 		3B40BE0F220B845E00A7E002 /* DoubleWakeup.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = DoubleWakeup.plist; path = Package/Library/MobileSubstrate/DynamicLibraries/DoubleWakeup.plist; sourceTree = "<group>"; };
+		3B40BE15220B85DD00A7E002 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3B40BE17220B85F100A7E002 /* libsubstrate.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsubstrate.dylib; path = ../../../../opt/iOSOpenDev/lib/libsubstrate.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +32,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B40BE18220B85F100A7E002 /* libsubstrate.dylib in Frameworks */,
+				3B40BE16220B85DD00A7E002 /* UIKit.framework in Frameworks */,
 				3B40BE00220B845E00A7E002 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,6 +61,8 @@
 		3B40BDFE220B845E00A7E002 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3B40BE17220B85F100A7E002 /* libsubstrate.dylib */,
+				3B40BE15220B85DD00A7E002 /* UIKit.framework */,
 				3B40BDFF220B845E00A7E002 /* Foundation.framework */,
 			);
 			name = Frameworks;
@@ -296,10 +304,15 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DoubleWakeup/DoubleWakeup-Prefix.pch";
 				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/iOSOpenDev/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = "";
+				iOSOpenDevDevice = 192.168.10.23;
 				iOSOpenDevInstallOnAnyBuild = NO;
 				iOSOpenDevInstallOnProfiling = YES;
 				iOSOpenDevRespringOnInstall = YES;
@@ -317,10 +330,15 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DoubleWakeup/DoubleWakeup-Prefix.pch";
 				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/iOSOpenDev/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = "";
+				iOSOpenDevDevice = 192.168.10.23;
 				iOSOpenDevInstallOnAnyBuild = NO;
 				iOSOpenDevInstallOnProfiling = YES;
 				iOSOpenDevRespringOnInstall = YES;
